@@ -1,14 +1,15 @@
 {
     "type": "library",
-    "name": "nguyenanhung/template-php-lib",
-    "description": "Template for repository helper, library - Basic, Simple and Lightweight",
+    "name": "nguyenanhung/polyfill-codeigniter-built-in",
+    "description": "CodeIgniter - Built in function polyfill",
     "keywords": [
-        "template",
+        "codeigniter",
+        "polyfill",
         "helper",
         "library",
         "php"
     ],
-    "homepage": "https://github.com/nguyenanhung/template-php-lib",
+    "homepage": "https://github.com/nguyenanhung/polyfill-codeigniter-built-in",
     "license": "MIT",
     "minimum-stability": "stable",
     "authors": [
@@ -20,11 +21,15 @@
         }
     ],
     "require": {
-        "php": ">=5.6"
+        "php": ">=5.6",
+        "nguyenanhung/my-debug": "^3.0 || ^2.0 || ^1.0"
+    },
+    "require-dev": {
+        "nguyenanhung/dotenv": "^1.0"
     },
     "autoload": {
         "psr-4": {
-            "nguyenanhung\\Libraries\\TemplateREPLACE\\": "src/"
+            "nguyenanhung\\Polyfill\\CodeIgniter\\": "src/"
         },
         "files": [
             "helpers/helpers.php"
