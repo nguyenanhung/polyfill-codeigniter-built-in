@@ -4,6 +4,7 @@
 
 1 số function built-in trọng trong hay sử dụng trong framework CodeIgniter để sử dụng trong các Framework khác. Chủ yếu là các function sau
 
+- `is_windows`
 - `is_https`
 - `is_cli`
 - `log_message`
