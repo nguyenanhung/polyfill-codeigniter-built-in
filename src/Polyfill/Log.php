@@ -14,7 +14,7 @@ class Log
 {
     public static function write($level = 'info', $message = '')
     {
-        $level  = strtolower($level);
+        $level = strtolower($level);
         $logger = new \nguyenanhung\MyDebug\Logger();
         $logger->setDebugStatus(true)
                ->setLoggerPath(__env__('LOGGER_PATH'))

@@ -1,4 +1,13 @@
 <?php
+if (!function_exists('is_windows')) {
+    /**
+     * Check if we're running on a Windows platform
+     */
+    function is_windows()
+    {
+        return DIRECTORY_SEPARATOR === '\\';
+    }
+}
 if (!function_exists('is_https')) {
     /**
      * Is HTTPS?
@@ -11,9 +20,13 @@ if (!function_exists('is_https')) {
     {
         if (!empty($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) !== 'off') {
             return true;
-        } elseif (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) === 'https') {
+        }
+
+        if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) === 'https') {
             return true;
-        } elseif (!empty($_SERVER['HTTP_FRONT_END_HTTPS']) && strtolower($_SERVER['HTTP_FRONT_END_HTTPS']) !== 'off') {
+        }
+
+        if (!empty($_SERVER['HTTP_FRONT_END_HTTPS']) && strtolower($_SERVER['HTTP_FRONT_END_HTTPS']) !== 'off') {
             return true;
         }
 
@@ -51,7 +64,7 @@ if (!function_exists('__startsWith__')) {
     function __startsWith__($haystack, $needles)
     {
         foreach ((array) $needles as $needle) {
-            if ($needle != '' && mb_strpos($haystack, $needle) === 0) {
+            if ($needle !== '' && mb_strpos($haystack, $needle) === 0) {
                 return true;
             }
         }
@@ -74,18 +87,20 @@ if (!function_exists('__endsWith__')) {
 if (!function_exists('__uri_string__')) {
     function __uri_string__($uri)
     {
-        if (__env__('enable_query_strings') === false) {
+        if (__env__('ENABLE_QUERY_STRINGS') === false) {
             is_array($uri) && $uri = implode('/', $uri);
 
             return ltrim($uri, '/');
-        } elseif (is_array($uri)) {
+        }
+
+        if (is_array($uri)) {
             return http_build_query($uri);
         }
 
         return $uri;
     }
 }
-if (!function_exists('env')) {
+if (!function_exists('__env__')) {
     /**
      * Gets the value of an environment variable. Supports boolean, empty and null.
      *
@@ -174,7 +189,7 @@ if (!function_exists('site_url')) {
 
             return url('/' . $uri, [], $secure);
         }
-        $base_url   = __env__('APP_URL');
+        $base_url = __env__('APP_URL');
         $index_page = __env__('INDEX_PAGE');
         if (isset($protocol)) {
             // For protocol-relative links
@@ -188,7 +203,7 @@ if (!function_exists('site_url')) {
             return $base_url . $index_page;
         }
         $uri = __uri_string__($uri);
-        if (__env__('enable_query_strings') === false) {
+        if (__env__('ENABLE_QUERY_STRINGS') === false) {
             if (!empty(__env__('URL_SUFFIX'))) {
                 $suffix = __env__('URL_SUFFIX');
             } else {
@@ -205,7 +220,9 @@ if (!function_exists('site_url')) {
             $index_page = rtrim($index_page, '/') . '/';
 
             return $base_url . $index_page . $uri;
-        } elseif (strpos($uri, '?') === false) {
+        }
+
+        if (strpos($uri, '?') === false) {
             $uri = '?' . $uri;
         }
 

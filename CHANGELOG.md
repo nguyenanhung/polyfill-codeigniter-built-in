@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [1.0.1] - 2023/02/13
+
+### Added
+
+- [x] Add function `is_windows`
+
 ## [1.0.0] - 2022/07/22
 
 ### Added
