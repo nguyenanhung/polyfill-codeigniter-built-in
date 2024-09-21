@@ -1,4 +1,7 @@
-[![Latest Stable Version](http://poser.pugx.org/nguyenanhung/polyfill-codeigniter-built-in/v)](https://packagist.org/packages/nguyenanhung/polyfill-codeigniter-built-in) [![Total Downloads](http://poser.pugx.org/nguyenanhung/polyfill-codeigniter-built-in/downloads)](https://packagist.org/packages/nguyenanhung/polyfill-codeigniter-built-in) [![Latest Unstable Version](http://poser.pugx.org/nguyenanhung/polyfill-codeigniter-built-in/v/unstable)](https://packagist.org/packages/nguyenanhung/polyfill-codeigniter-built-in) [![License](http://poser.pugx.org/nguyenanhung/polyfill-codeigniter-built-in/license)](https://packagist.org/packages/nguyenanhung/polyfill-codeigniter-built-in) [![PHP Version Require](http://poser.pugx.org/nguyenanhung/polyfill-codeigniter-built-in/require/php)](https://packagist.org/packages/nguyenanhung/polyfill-codeigniter-built-in)
+[![Latest Stable Version](https://img.shields.io/packagist/v/nguyenanhung/polyfill-codeigniter-built-in.svg?style=flat-square)](https://packagist.org/packages/nguyenanhung/polyfill-codeigniter-built-in)
+[![Total Downloads](https://img.shields.io/packagist/dt/nguyenanhung/polyfill-codeigniter-built-in.svg?style=flat-square)](https://packagist.org/packages/nguyenanhung/polyfill-codeigniter-built-in)
+[![License](https://img.shields.io/packagist/l/nguyenanhung/polyfill-codeigniter-built-in.svg?style=flat-square)](https://packagist.org/packages/nguyenanhung/polyfill-codeigniter-built-in)
+[![PHP Version Require](https://img.shields.io/packagist/dependency-v/nguyenanhung/polyfill-codeigniter-built-in/php)](https://packagist.org/packages/nguyenanhung/polyfill-codeigniter-built-in)
 
 # CodeIgniter Polyfill Built-in function
 
